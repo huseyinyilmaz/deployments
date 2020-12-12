@@ -3,6 +3,6 @@ version: '3.1'
 services:
 
   memcached:
-    image: memcached
+    image: redis
     ports:
-      - 11211:11211
+      - 6379:6379
