@@ -1,6 +1,8 @@
 DOCKER_COMPOSE = docker-compose
 DATA_DIR = postgresdata
 CONTAINER_NAME = postgres
+PGPASSWORD = postgres
+PGUSERNAME = postgres
 
 .PHONY: help
 help: ## This outputs help information.
@@ -20,6 +22,10 @@ restart: down up ## Restarts docker-compose configuration
 .PHONY: shell
 shell: ## starts a shell in container. 
 	$(DOCKER_COMPOSE) exec $(CONTAINER_NAME) bash
+
+.PHONY: psql
+psql: ## Starts a postgres shell.
+	PGPASSWORD=$(PGPASSWORD) psql --host localhost --port 5432 --username $(PGUSERNAME)
 
 .PHONY: ps
 ps: ## Shows the status of running containers.
