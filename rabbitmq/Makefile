@@ -1,6 +1,7 @@
 DOCKER_COMPOSE = docker-compose
 DATA_DIR = data
 LOGS_DIR = logs
+CONTAINER_NAME = rabbitmq
 
 .PHONY: help
 help: ## This outputs help information.
@@ -19,7 +20,7 @@ restart: down up ## Restarts docker-compose configuration
 
 .PHONY: shell
 shell: ## starts a shell in container. 
-	$(DOCKER_COMPOSE) exec memcached bash
+	$(DOCKER_COMPOSE) exec $(CONTAINER_NAME) bash
 
 .PHONY: ps
 ps: ## Shows the status of running containers.
