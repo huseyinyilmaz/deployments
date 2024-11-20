@@ -1,4 +1,4 @@
-DOCKER_COMPOSE = docker-compose
+DOCKER_COMPOSE = docker compose
 DATA_DIR = data
 LOGS_DIR = logs
 CONTAINER_NAME = rabbitmq
