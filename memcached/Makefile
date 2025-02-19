@@ -1,4 +1,4 @@
-DOCKER_COMPOSE = docker-compose
+DOCKER_COMPOSE = docker compose
 
 down:
 	$(DOCKER_COMPOSE) down --remove-orphans
